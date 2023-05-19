@@ -69,6 +69,43 @@ files = [
 ]
 
 [[package]]
+name = "markdown-it-py"
+version = "2.2.0"
+description = "Python port of markdown-it. Markdown parsing, done right!"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "markdown-it-py-2.2.0.tar.gz", hash = "sha256:7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1"},
+    {file = "markdown_it_py-2.2.0-py3-none-any.whl", hash = "sha256:5a35f8d1870171d9acc47b99612dc146129b631baf04970128b568f190d0cc30"},
+]
+
+[package.dependencies]
+mdurl = ">=0.1,<1.0"
+
+[package.extras]
+benchmarking = ["psutil", "pytest", "pytest-benchmark"]
+code-style = ["pre-commit (>=3.0,<4.0)"]
+compare = ["commonmark (>=0.9,<1.0)", "markdown (>=3.4,<4.0)", "mistletoe (>=1.0,<2.0)", "mistune (>=2.0,<3.0)", "panflute (>=2.3,<3.0)"]
+linkify = ["linkify-it-py (>=1,<3)"]
+plugins = ["mdit-py-plugins"]
+profiling = ["gprof2dot"]
+rtd = ["attrs", "myst-parser", "pyyaml", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinx_book_theme"]
+testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+description = "Markdown URL utilities"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
+    {file = "mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"},
+]
+
+[[package]]
 name = "numpy"
 version = "1.24.3"
 description = "Fundamental package for array computing in Python"
@@ -104,6 +141,33 @@ files = [
     {file = "numpy-1.24.3-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1a7d6acc2e7524c9955e5c903160aa4ea083736fde7e91276b0e5d98e6332812"},
     {file = "numpy-1.24.3-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:35400e6a8d102fd07c71ed7dcadd9eb62ee9a6e84ec159bd48c28235bbb0f8e4"},
     {file = "numpy-1.24.3.tar.gz", hash = "sha256:ab344f1bf21f140adab8e47fdbc7c35a477dc01408791f8ba00d018dd0bc5155"},
+]
+
+[[package]]
+name = "opencv-python"
+version = "4.7.0.72"
+description = "Wrapper package for OpenCV python bindings."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "opencv-python-4.7.0.72.tar.gz", hash = "sha256:3424794a711f33284581f3c1e4b071cfc827d02b99d6fd9a35391f517c453306"},
+    {file = "opencv_python-4.7.0.72-cp37-abi3-macosx_10_16_x86_64.whl", hash = "sha256:d4f8880440c433a0025d78804dda6901d1e8e541a561dda66892d90290aef881"},
+    {file = "opencv_python-4.7.0.72-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:7a297e7651e22eb17c265ddbbc80e2ba2a8ff4f4a1696a67c45e5f5798245842"},
+    {file = "opencv_python-4.7.0.72-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cd08343654c6b88c5a8c25bf425f8025aed2e3189b4d7306b5861d32affaf737"},
+    {file = "opencv_python-4.7.0.72-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ebfc0a3a2f57716e709028b992e4de7fd8752105d7a768531c4f434043c6f9ff"},
+    {file = "opencv_python-4.7.0.72-cp37-abi3-win32.whl", hash = "sha256:eda115797b114fc16ca6f182b91c5d984f0015c19bec3145e55d33d708e9bae1"},
+    {file = "opencv_python-4.7.0.72-cp37-abi3-win_amd64.whl", hash = "sha256:812af57553ec1c6709060c63f6b7e9ad07ddc0f592f3ccc6d00c71e0fe0e6376"},
+]
+
+[package.dependencies]
+numpy = [
+    {version = ">=1.21.2", markers = "python_version >= \"3.10\""},
+    {version = ">=1.21.4", markers = "python_version >= \"3.10\" and platform_system == \"Darwin\""},
+    {version = ">=1.22.0", markers = "python_version >= \"3.11\""},
+    {version = ">=1.19.3", markers = "python_version >= \"3.6\" and platform_system == \"Linux\" and platform_machine == \"aarch64\" or python_version >= \"3.9\""},
+    {version = ">=1.17.0", markers = "python_version >= \"3.7\""},
+    {version = ">=1.17.3", markers = "python_version >= \"3.8\""},
 ]
 
 [[package]]
@@ -186,7 +250,41 @@ files = [
 docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline-tabs", "sphinx-removed-in", "sphinxext-opengraph"]
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
+[[package]]
+name = "pygments"
+version = "2.15.1"
+description = "Pygments is a syntax highlighting package written in Python."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "Pygments-2.15.1-py3-none-any.whl", hash = "sha256:db2db3deb4b4179f399a09054b023b6a586b76499d36965813c71aa8ed7b5fd1"},
+    {file = "Pygments-2.15.1.tar.gz", hash = "sha256:8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"},
+]
+
+[package.extras]
+plugins = ["importlib-metadata"]
+
+[[package]]
+name = "rich"
+version = "13.3.5"
+description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+files = [
+    {file = "rich-13.3.5-py3-none-any.whl", hash = "sha256:69cdf53799e63f38b95b9bf9c875f8c90e78dd62b2f00c13a911c7a3b9fa4704"},
+    {file = "rich-13.3.5.tar.gz", hash = "sha256:2d11b9b8dd03868f09b4fffadc84a6a8cda574e40dc90821bd845720ebb8e89c"},
+]
+
+[package.dependencies]
+markdown-it-py = ">=2.2.0,<3.0.0"
+pygments = ">=2.13.0,<3.0.0"
+
+[package.extras]
+jupyter = ["ipywidgets (>=7.5.1,<9)"]
+
 [metadata]
 lock-version = "2.0"
-python-versions = "3.10.10"
-content-hash = "d71cf1fe6be0badbce9958e87335eb5e6b6b44035ea9d2bc9b11cb3a8503a8d0"
+python-versions = "^3.10"
+content-hash = "a8b18e1363157cf9ba151e44d2f1ceea9830491d13701030312cd4dfba4dbb11"
